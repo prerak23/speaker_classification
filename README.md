@@ -9,3 +9,6 @@ https://www.danielpovey.com/files/2015_asru_tdnn_ubm.pdf
 http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.87.604&rep=rep1&type=pdf
 https://www.sciencedirect.com/science/article/pii/S1877050918314042
 https://wsstriving.github.io/2016/04/28/Code-Based-GMM-UBM-Tutorial/
+https://kaldi-asr.org/models/m7
+
+https://github.com/kaldi-asr/kaldi
