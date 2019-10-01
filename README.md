@@ -12,3 +12,4 @@ Master 2 supervised project based on asr speaker regonation using dnn
 7) https://kaldi-asr.org/models/m7
 8) https://www.danielpovey.com/files/2015_asru_tdnn_ubm.pdf
 9) https://github.com/kaldi-asr/kaldi
+10) http://www.odyssey2016.org/papers/slides/24_Fri/02%20-%20Keynote_3/Keynote_3.pdf
