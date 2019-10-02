@@ -22,10 +22,7 @@ TODO
 
 ## **Structure of the repository**
 *  README.md:
-*  literacy_survey: directory containing all the research articles reffering to our tasks
-*  slides: directory containing slides for the class meeting;
-*  code: directory containing code for our implementated work;
-*  results: directory for the result and the output generated.
+TODO
 
 ## **Getting Started*
 TODO
