@@ -7,10 +7,14 @@ import subprocess
 from operator import itemgetter
 dic={}
 cn=0
+
+# Iterate thorugh all the files in the downloaded dataset from voxforge 
+
 for x in os.listdir(os.getcwd()):
-    if os.path.exists(os.getcwd()+"/"+x+"/"+"wav"):
-        xn=x.split("-")
-        if not bool(re.search("[0-9_]+",xn[0])):
+    if os.path.exists(os.getcwd()+"/"+x+"/"+"wav"): #Check that this folder contains wav file or not 
+        xn=x.split("-") #Split the name
+        if not bool(re.search("[0-9_]+",xn[0])): #Check that the Name is a proper name or not and should not contain any numbers or special char's
+            #Create a dictionary which calculate how many utterances are present for each author
             if xn[0] not in dic:
                 dic[xn[0]]=len(os.listdir(os.getcwd()+"/"+x+"/"+"wav"))
             else:
@@ -18,24 +22,29 @@ for x in os.listdir(os.getcwd()):
     cn+=1
 
 print(sorted(dic.items(),key=itemgetter(1)))
+
 #os.mkdir(os.getcwd()+"/"+"/big_data/"+dic.keys()[0])
 llp={}
-'''
+
+
+#Iterate through the files
+
 for x in os.listdir(os.getcwd()):
-    if os.path.exists(os.getcwd()+"/"+x+"/"+"wav"):
-        xn=x.split("-")
-        if not bool(re.search("[0-9_]+",xn[0])):
-            if dic[xn[0]] > 30 and dic[xn[0]] < 2000 :
-                if xn[0] not in llp:
+    if os.path.exists(os.getcwd()+"/"+x+"/"+"wav"): #Check if the file contain ".wav" file or not
+        xn=x.split("-") 
+        if not bool(re.search("[0-9_]+",xn[0])): #Check if the name contain any special char's or Nubmers
+            if dic[xn[0]] > 30 and dic[xn[0]] < 2000 : #Check the author name in the dictonary created above to check how many utterances are there are there per author it should be in the range of 30 to 2000 
+                if xn[0] not in llp: #This to check if the author folder is already present in the directory if not then here it create first the author folder and then the subfolder
                     llp[xn[0]]=[]
-                    os.mkdir(os.getcwd()+"/"+"/big_data/"+xn[0])
-                    os.mkdir(os.getcwd()+"/"+"/big_data/"+xn[0]+"/"+x)
+                    os.mkdir(os.getcwd()+"/"+"/big_data/"+xn[0]) #Create Folder name with author first name 
+                    os.mkdir(os.getcwd()+"/"+"/big_data/"+xn[0]+"/"+x) #Create Sub Folder Name 
                     xni=0
+                    #Copy every utterance file into subfolder which is on top of the main folder which is named by author first name
                     for y in os.listdir(os.getcwd()+"/"+x+"/"+"wav"):
                         subprocess.call(["cp","-r",os.getcwd()+"/"+x+"/"+"wav/"+y,os.getcwd()+"/"+"big_data/"+xn[0]+"/"+x])
                         xni+=1
                     llp[xn[0]].append((xni,x))
-                else:
+                else: #The Author folder is already present then just need to copy the utterance by creating a subfolder and the copying the utterances 
                     xni=0
                     os.mkdir(os.getcwd()+"/"+"/big_data/"+xn[0]+"/"+x)
                     for y in os.listdir(os.getcwd()+"/"+x+"/"+"wav"):
@@ -45,7 +54,6 @@ for x in os.listdir(os.getcwd()):
 
 print("=======================================================")
 print(llp)
-'''
 
 
 #print(len(dic),cn)
