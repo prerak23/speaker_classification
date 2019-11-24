@@ -10,7 +10,7 @@ no_of_files=0
 
 # To Create 3 important files WAV.scp utt2spk and spk2utt
 '''
-#here opening 2 files
+
 
 with open("/home/kaldi_asr/kaldi/egs/voxceleb/v2/data/train/wav.scp","w+") as fof,open("/home/kaldi_asr/kaldi/egs/voxceleb/v2/data/train/utt2spk","w+") as fof2:
     #Iterate through all the files in the directory
@@ -40,7 +40,7 @@ with open("/home/kaldi_asr/kaldi/egs/voxceleb/v2/data/train/wav.scp","w+") as fo
 
 '''
 
-#Same thing is as above but for the file "sok2utt"
+#Same thing is as above but for the file "spk2utt"
 
 
 with open("/home/kaldi_asr/kaldi/egs/voxceleb/v2/data/train/spk2utt","w+") as fof3:
