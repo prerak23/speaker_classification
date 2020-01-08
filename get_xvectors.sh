@@ -1,6 +1,4 @@
 #!/bin/bash
-$dir_data=$1
-$dir_data_prep=$2
 current_dir=`pwd`
 current_dir_util="${current_dir}/utils/fix_data_dir.sh"
 current_dir_xvec="${current_dir}/vector_extract.sh"
